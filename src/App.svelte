@@ -4,14 +4,13 @@
 	const Alert = require('electron-alert');
 	const crypto = require('crypto');
 	import {AccountRepository} from './account/account.repo';
-
-
-
-	export let name;
+import AccountCardGrid from './components/accountCardGrid.svelte';
 	
 </script>
 
 <main>
+	for
+	<AccountCardGrid></AccountCardGrid>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>

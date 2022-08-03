@@ -1,6 +1,6 @@
 
 export class ColorGenerator {
-    getRandomColor() {
+    static getRandomColor() {
         let letters = '0123456789ABCDEF';
         var color = '#';
         for (var i = 0; i < 6; i++) {

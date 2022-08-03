@@ -1,21 +1,19 @@
 import {ColorGenerator} from "../utils/color/color";
 
 export class Account {
-    constructor(newName, newPassword, steamURL, color) {
-      this._name = newName;
-      this._password = newPassword;
-      this._steamURL = steamURL;
+    constructor(newName, newPassword, bundle, color) {
+      this.name = newName;
+      this.password = newPassword;
+      this.bundle = bundle;
 
-      if(color == null){
-        this._color = getRandomColor();
-        console.log("New color: "+this._color);
+      if(color === undefined){
+        this._color = ColorGenerator.getRandomColor();
       } else{
         this._color = color;
-        console.log("Old color: "+this._color);
       }
     }
   
     toString() {
-      return "\n Username: " + this._name + "\n Url: " + this._steamURL;
+      return "\n Username: " + this.name;
     }
   }
