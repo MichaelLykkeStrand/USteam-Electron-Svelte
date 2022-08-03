@@ -1,6 +1,6 @@
-const {getRandomColor} = require('../utils/capitalize/color/color')
+import {ColorGenerator} from "../utils/color/color";
 
-class Account {
+export class Account {
     constructor(newName, newPassword, steamURL, color) {
       this._name = newName;
       this._password = newPassword;
@@ -19,5 +19,3 @@ class Account {
       return "\n Username: " + this._name + "\n Url: " + this._steamURL;
     }
   }
-
-  module.exports = Account

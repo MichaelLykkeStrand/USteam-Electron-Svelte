@@ -1,5 +1,14 @@
 <script>
+	const Store = require('electron-store');
+	const prompt = require('electron-prompt');
+	const Alert = require('electron-alert');
+	const crypto = require('crypto');
+	import {AccountRepository} from './account/account.repo';
+
+
+
 	export let name;
+	
 </script>
 
 <main>
