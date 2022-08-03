@@ -22,12 +22,12 @@ export class AccountRepository {
       });
       this.accounts.sort(compare);
       console.log("Accounts loaded: " + this.accounts);
-      this.save();
+      this.#save();
       return true;
     }
   }
 
-  save() {
+  #save() {
       try { this.listener.onDataSaved(); } catch { }
       this.accounts.sort(compare);
       this.store.set('accounts', this.accounts);
@@ -45,7 +45,7 @@ export class AccountRepository {
       //Check for valid name and create user
       if (newAccount._name != "" && newAccount._password != "" && exists != true) {
         this.accounts.push(new Account(newAccount._name, newAccount._password, newAccount._steamURL, newAccount._color));
-        this.save();
+        this.#save();
         console.log("Account added: " + newAccount._name);
         return true;
       } else {
@@ -61,7 +61,7 @@ export class AccountRepository {
           this.accounts = this.accounts.filter(function (item) {
             return item._name !== username;
           });
-          this.save();
+          this.#save();
           console.log("Account removed")
           return true;
         }
