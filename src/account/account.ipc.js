@@ -1,4 +1,3 @@
-// Modules to control application life and create native browser window
 import { ipcMain } from 'electron';
 let accountRepository;
 const load = (repository)=>{

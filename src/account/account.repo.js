@@ -1,5 +1,5 @@
 import {Account} from "./account.model"
-const {app} = require('electron')
+import {app} from "electron"
 
 
 export class AccountRepository {

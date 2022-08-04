@@ -4,12 +4,12 @@
 	const Alert = require('electron-alert');
 	const crypto = require('crypto');
 	import {AccountRepository} from './account/account.repo';
-import AccountCardGrid from './components/accountCardGrid.svelte';
+	import AccountCardGrid from './components/accountCardGrid.svelte';
+	let accounts = ipcRenderer.sendSync('get-accounts');
 	
 </script>
 
 <main>
-	for
 	<AccountCardGrid></AccountCardGrid>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
