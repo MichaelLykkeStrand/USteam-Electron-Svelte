@@ -3,7 +3,7 @@ const Store = require('electron-store');
 const prompt = require('electron-prompt');
 const Alert = require('electron-alert');
 const path = require('path');
-import AccountRepository from "./account/account.repo";
+const AccountRepository = require('./account/account.repo');
 const USteamTray = require('./tray/usteam.tray');
 
 

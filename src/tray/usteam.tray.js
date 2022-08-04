@@ -10,7 +10,7 @@ const USteamWindowManger = require('../window/usteam.window.manager');
 const trayMenuImageWidth = 16;
 const trayMenuImageHeight = 16;
 
-let window = require('../windowConstants');
+let window = require('../window/windowConstants');
 let iconPath = path.join(__dirname, '../assets/icon/icon2.png');
 let image = nativeImage.createFromPath(iconPath);
 let tray;

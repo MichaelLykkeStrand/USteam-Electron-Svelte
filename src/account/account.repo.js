@@ -1,15 +1,15 @@
-import {Account} from "./account.model"
-import {app} from "electron"
+const Account = require('./account.model');
+const {app} = require('electron')
 
 
-export class AccountRepository {
+class AccountManager {
   constructor(store, callback){
     this.listener = callback;
     this.store = store;
-    this.init();
+    this.loadAccounts();
   }
   
-  init() {
+  loadAccounts() {
     let tempAccounts = this.store.get('accounts');
     console.log(app.getPath('userData'));
     this.accounts = [];
@@ -22,20 +22,22 @@ export class AccountRepository {
       });
       this.accounts.sort(compare);
       console.log("Accounts loaded: " + this.accounts);
-      this.#save();
+      //Resave accounts to conform with model changes!
+      this.saveAccounts();
       return true;
     }
   }
 
-  #save() {
+  saveAccounts() {
       try { this.listener.onDataSaved(); } catch { }
       this.accounts.sort(compare);
       this.store.set('accounts', this.accounts);
       console.log("Saving accounts: " + this.accounts);
   }
 
-  add(newAccount){
+  addAccount(newAccount){
       console.log("add account called");
+      //CHECK IF ACCOUNT EXISTS
       let exists = false;
       this.accounts.forEach(account => {
         if (account._name == newAccount._name) {
@@ -45,7 +47,7 @@ export class AccountRepository {
       //Check for valid name and create user
       if (newAccount._name != "" && newAccount._password != "" && exists != true) {
         this.accounts.push(new Account(newAccount._name, newAccount._password, newAccount._steamURL, newAccount._color));
-        this.#save();
+        this.saveAccounts();
         console.log("Account added: " + newAccount._name);
         return true;
       } else {
@@ -54,14 +56,14 @@ export class AccountRepository {
       }
   }
 
-  remove(username){
+  removeAccount(username){
       console.log("Remove account: " + username);
       this.accounts.forEach(account => {
         if (account._name == username) {
           this.accounts = this.accounts.filter(function (item) {
             return item._name !== username;
           });
-          this.#save();
+          this.saveAccounts();
           console.log("Account removed")
           return true;
         }
@@ -69,7 +71,7 @@ export class AccountRepository {
       return false;
   }
 
-  getAll(){
+  getAccounts(){
       let tempAccounts = [];
       this.accounts.sort(compare);
       this.accounts.forEach(account => {
@@ -81,13 +83,16 @@ export class AccountRepository {
 }
 
 function compare(a, b) {
-  var nameA = a._name.toUpperCase();
-  var nameB = b._name.toUpperCase();
+  var nameA = a._name.toUpperCase(); // ignore upper and lowercase
+  var nameB = b._name.toUpperCase(); // ignore upper and lowercase
   if (nameA < nameB) {
     return -1;
   }
   if (nameA > nameB) {
     return 1;
   }
+  // names must be equal
   return 0;
 }
+
+module.exports = AccountManager;

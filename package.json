@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Svelte + Electron Forge",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
     "start": "concurrently \"npm:svelte-dev\" \"electron-forge start\"",
     "package": "electron-forge package",
@@ -56,6 +55,7 @@
     "electron-settings": "^4.0.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^6.0.1",
+    "esm": "^3.2.25",
     "find-process": "^1.4.4",
     "make": "^0.8.1",
     "node-fetch": "^2.6.1",

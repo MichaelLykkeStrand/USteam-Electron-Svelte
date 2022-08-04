@@ -1,10 +1,9 @@
 <script>
-	export let accounts;
 	
 </script>
 
 <main>
-	<h1>Hello {account.name}!</h1>
+	<h1>Hello</h1>
 </main>
 
 <style>

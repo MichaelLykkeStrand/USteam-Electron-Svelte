@@ -1,19 +1,23 @@
-import {ColorGenerator} from "../utils/color/color";
+const {getRandomColor} = require('../utils/color/color')
 
-export class Account {
-    constructor(newName, newPassword, bundle, color) {
-      this.name = newName;
-      this.password = newPassword;
-      this.bundle = bundle;
+class Account {
+    constructor(newName, newPassword, steamURL, color) {
+      this._name = newName;
+      this._password = newPassword;
+      this._steamURL = steamURL;
 
-      if(color === undefined){
-        this._color = ColorGenerator.getRandomColor();
+      if(color == null){
+        this._color = getRandomColor();
+        console.log("New color: "+this._color);
       } else{
         this._color = color;
+        console.log("Old color: "+this._color);
       }
     }
   
     toString() {
-      return "\n Username: " + this.name;
+      return "\n Username: " + this._name + "\n Url: " + this._steamURL;
     }
   }
+
+  module.exports = Account

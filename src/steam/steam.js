@@ -7,7 +7,7 @@ const settings = require('electron-settings');
 let settingsConstants = require('../settings/settingsConstants');
 let timer = require('../utils/timer');
 
-export class Steam {
+class Steam {
     constructor() {
     }
 
@@ -65,7 +65,6 @@ export class Steam {
         console.log("Steam has logged out!")
     }
 
-    //TODO refactor
     static async TryExit(){
       var count = 0;
        await find('name', 'steam').then(async function (list) {
@@ -89,9 +88,13 @@ export class Steam {
 }
 
 
-export class SteamProfile {
-  constructor(profileName, profilePictureSrc) {
-    this._profileName = profileName;
-    this._profilePictureSrc = profilePictureSrc;
+class SteamProfile {
+    constructor(profileName, profilePictureSrc) {
+      this._profileName = profileName;
+      this._profilePictureSrc = profilePictureSrc;
+    }
   }
-}
+
+
+
+module.exports = Steam

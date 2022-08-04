@@ -332,7 +332,7 @@ var app = (function () {
         }
       }
 
-    const {app} = require('electron');
+    const app = require('electron');
 
 
     class AccountRepository {
@@ -437,9 +437,9 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			h1.textContent = `Hello ${account.name}!`;
-    			add_location(h1, file, 6, 1, 58);
-    			add_location(main, file, 5, 0, 49);
+    			h1.textContent = "Hello";
+    			add_location(h1, file, 5, 1, 35);
+    			add_location(main, file, 4, 0, 26);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -467,35 +467,10 @@ var app = (function () {
     	return block;
     }
 
-    function instance($$self, $$props, $$invalidate) {
-    	let { accounts } = $$props;
-    	const writable_props = ["accounts"];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<AccountCardGrid> was created with unknown prop '${key}'`);
-    	});
-
-    	$$self.$set = $$props => {
-    		if ("accounts" in $$props) $$invalidate(0, accounts = $$props.accounts);
-    	};
-
-    	$$self.$capture_state = () => ({ accounts });
-
-    	$$self.$inject_state = $$props => {
-    		if ("accounts" in $$props) $$invalidate(0, accounts = $$props.accounts);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [accounts];
-    }
-
     class AccountCardGrid extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { accounts: 0 });
+    		init(this, options, null, create_fragment, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -503,21 +478,6 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*accounts*/ ctx[0] === undefined && !("accounts" in props)) {
-    			console.warn("<AccountCardGrid> was created without expected prop 'accounts'");
-    		}
-    	}
-
-    	get accounts() {
-    		throw new Error("<AccountCardGrid>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set accounts(value) {
-    		throw new Error("<AccountCardGrid>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -527,52 +487,49 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let main;
     	let t0;
-    	let t1;
     	let h1;
-    	let t5;
+    	let t4;
     	let p;
-    	let t6;
+    	let t5;
     	let a;
-    	let t8;
+    	let t7;
     	let current;
     	const accountcardgrid = new AccountCardGrid({ $$inline: true });
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			t0 = text("for\n\t");
     			create_component(accountcardgrid.$$.fragment);
-    			t1 = space();
+    			t0 = space();
     			h1 = element("h1");
     			h1.textContent = `Hello ${name}!`;
-    			t5 = space();
+    			t4 = space();
     			p = element("p");
-    			t6 = text("Visit the ");
+    			t5 = text("Visit the ");
     			a = element("a");
     			a.textContent = "Svelte tutorial";
-    			t8 = text(" to learn how to build Svelte apps.");
-    			attr_dev(h1, "class", "svelte-2x1evt");
-    			add_location(h1, file$1, 13, 1, 361);
+    			t7 = text(" to learn how to build Svelte apps.");
+    			attr_dev(h1, "class", "svelte-6wjt63");
+    			add_location(h1, file$1, 13, 1, 424);
     			attr_dev(a, "href", "https://svelte.dev/tutorial");
-    			add_location(a, file$1, 14, 14, 398);
-    			add_location(p, file$1, 14, 1, 385);
-    			attr_dev(main, "class", "svelte-2x1evt");
-    			add_location(main, file$1, 10, 0, 311);
+    			add_location(a, file$1, 14, 14, 462);
+    			add_location(p, file$1, 14, 1, 449);
+    			attr_dev(main, "class", "svelte-6wjt63");
+    			add_location(main, file$1, 11, 0, 377);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, t0);
     			mount_component(accountcardgrid, main, null);
-    			append_dev(main, t1);
+    			append_dev(main, t0);
     			append_dev(main, h1);
-    			append_dev(main, t5);
+    			append_dev(main, t4);
     			append_dev(main, p);
-    			append_dev(p, t6);
+    			append_dev(p, t5);
     			append_dev(p, a);
-    			append_dev(p, t8);
+    			append_dev(p, t7);
     			current = true;
     		},
     		p: noop,
@@ -602,11 +559,12 @@ var app = (function () {
     	return block;
     }
 
-    function instance$1($$self, $$props, $$invalidate) {
+    function instance($$self, $$props, $$invalidate) {
     	const Store = require("electron-store");
     	const prompt = require("electron-prompt");
     	const Alert = require("electron-alert");
     	const crypto = require("crypto");
+    	let accounts = ipcRenderer.sendSync("get-accounts");
 
     	$$self.$capture_state = () => ({
     		Store,
@@ -615,8 +573,18 @@ var app = (function () {
     		crypto,
     		AccountRepository,
     		AccountCardGrid,
-    		require
+    		accounts,
+    		require,
+    		ipcRenderer
     	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("accounts" in $$props) accounts = $$props.accounts;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
 
     	return [];
     }
@@ -624,7 +592,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+    		init(this, options, instance, create_fragment$1, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

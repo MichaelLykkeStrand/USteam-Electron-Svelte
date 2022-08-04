@@ -1,4 +1,5 @@
-import { ipcMain } from 'electron';
+// Modules to control application life and create native browser window
+const { app, BrowserWindow, Menu, Tray, nativeImage, ipcMain } = require('electron')
 let accountRepository;
 const load = (repository)=>{
     accountRepository = repository;
@@ -15,4 +16,5 @@ const load = (repository)=>{
         event.returnValue = accountRepository.getAccounts();
       });
 }
-export { load };
+
+module.exports.load = load;
