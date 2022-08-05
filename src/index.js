@@ -1,35 +1,54 @@
-const { app, BrowserWindow, nativeImage } = require('electron');
+// Modules to control application life and create native browser window
+const { app, BrowserWindow, Menu, Tray, nativeImage, ipcMain } = require('electron');
+
 const Store = require('electron-store');
 const prompt = require('electron-prompt');
 const Alert = require('electron-alert');
-const path = require('path');
+
 const AccountRepository = require('./account/account.repo');
+const SettingRepository = require('./settings/setting.repo');
+
 const USteamTray = require('./tray/usteam.tray');
+const USteamWindowManger = require('./window/usteam.window.manager');
 
+const AccountIPC = require('./account/account.ipc');
+const SteamIPC = require('./steam/steam.ipc');
+const SettingIPC = require('./settings/setting.ipc');
 
+const path = require('path')
+
+//Remove duplicate code
 let iconPath = path.join(__dirname, '/assets/icon/icon2.png');
 let image = nativeImage.createFromPath(iconPath);
+let window = require('./window/windowConstants');
 let crypto = require('crypto');
 let alert = new Alert();
+
 let accountRepository;
+let statRepository;
+let settingRepository;
 let store;
 
-// Live Reload
-require('electron-reload')(__dirname, {
-  electron: path.join(__dirname, '../node_modules', '.bin', 'electron'),
-  awaitWriteFinish: true
-});
-
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
-  // eslint-disable-line global-require
-  app.quit();
+//Callback to update the ui when data has been altered
+let dataSaveListener = {
+  onDataSaved: function(){
+    USteamTray.updateTrayContext();
+  }
 }
 
-const createWindow = () => {
-
-  if (BrowserWindow.getAllWindows().length !== 0) return;
+app.whenReady().then(() => {
+  //Check settings
+  settingRepository = new SettingRepository();
   showLoginPrompt();
+  app.on('activate', function () {
+    // On macOS it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (BrowserWindow.getAllWindows().length === 0) 
+    USteamWindowManger.open(window.MAIN_HTML);
+  })
+})
+
+const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
@@ -46,34 +65,8 @@ const createWindow = () => {
   mainWindow.webContents.openDevTools();
 };
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
-
-// Quit when all windows are closed.
-app.on('window-all-closed', () => {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
-});
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
-let dataSaveListener = {
-  onDataSaved: function(){
-    USteamTray.updateTrayContext();
-  }
+function loadRepositoryModules(store){
+  accountRepository = new AccountRepository(store, dataSaveListener);
 }
 
 function loadIPC(){
@@ -83,11 +76,7 @@ function loadIPC(){
   SettingIPC.load();
 }
 
-function loadRepositoryModules(store){
-  accountRepository = new AccountRepository(store, dataSaveListener);
-  statRepository = new StatsRepository(store, dataSaveListener);
-}
-
+//TODO REFACTOR
 function showLoginPrompt() {
   prompt({
     title: 'U-Steam',
@@ -125,7 +114,7 @@ function showLoginPrompt() {
             if (result.value) {
               USteamTray.load(accountRepository);
               USteamTray.createTray();
-              USteamWindowManger.open(window.MAIN_HTML);
+              createWindow();
             } else if (result.dismiss === Alert.DismissReason.cancel || result.dismiss === Alert.DismissReason.close) {
               showLoginPrompt();
             }

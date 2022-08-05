@@ -1,12 +1,11 @@
 <script>
-	const Store = require('electron-store');
-	const prompt = require('electron-prompt');
-	const Alert = require('electron-alert');
-	const crypto = require('crypto');
-	import {AccountRepository} from './account/account.repo';
 	import AccountCardGrid from './components/accountCardGrid.svelte';
+	const { ipcRenderer } = require('electron')
+
 	let accounts = ipcRenderer.sendSync('get-accounts');
-	
+	if(ipcRenderer != null && ipcRenderer != undefined){
+		console.log("life is good!")
+	}
 </script>
 
 <main>
