@@ -15,10 +15,6 @@ class Steam {
       vdf.parse()
     }
 
-    private static getVdf(){
-      
-    }
-
     static async login(account) {
         await this.logout();
         let steamDir = settings.getSync(settingsConstants.STEAM_DIR);
