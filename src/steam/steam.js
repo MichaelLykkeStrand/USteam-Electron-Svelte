@@ -5,13 +5,18 @@ const fetch = require('node-fetch');
 const settings = require('electron-settings');
 let settingsConstants = require('../settings/settingsConstants');
 let timer = require('../utils/timer');
+const vdf = require('simple-vdf');
 
 class Steam {
     constructor() {
     }
 
-    static getAccounts(){
+    static importAccounts(){
+      vdf.parse()
+    }
 
+    private static getVdf(){
+      
     }
 
     static async login(account) {
