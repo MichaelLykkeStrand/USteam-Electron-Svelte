@@ -1,5 +1,6 @@
 <script>
 	export let account;
+  import { fade } from 'svelte/transition';
   let username = "MyUser";
   let password = "MyPassword";
   let showDetails = false;
@@ -66,6 +67,7 @@
   width: 330px;
   height: 240px;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(56, 51, 64, 0.411);
 }
 
@@ -78,6 +80,7 @@
   width: 330px;
   height: 240px;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(56, 51, 64, 0.411);
 }
 
