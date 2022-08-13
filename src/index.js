@@ -7,7 +7,7 @@ const Alert = require('electron-alert');
 
 const AccountRepository = require('./account/account.repo');
 const SettingRepository = require('./settings/setting.repo');
-const SteamResourceLocator = require('./steam/steamResourceLocator');
+const SteamResourceLocator = require('./steam/steam.resource.Locator');
 
 const USteamTray = require('./tray/usteam.tray');
 const USteamWindowManger = require('./window/usteam.window.manager');
@@ -21,7 +21,7 @@ const path = require('path')
 //Remove duplicate code
 let iconPath = path.join(__dirname, '/assets/icon/icon2.png');
 let image = nativeImage.createFromPath(iconPath);
-let window = require('./window/windowConstants');
+let window = require('./window/window.constants');
 let crypto = require('crypto');
 let alert = new Alert();
 

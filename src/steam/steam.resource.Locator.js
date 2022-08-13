@@ -1,9 +1,6 @@
 
-const {
-    findSteam,
-  } = require('find-steam-app');
-
-const steamConst = require('./steamConstants');
+const {findSteam} = require('find-steam-app');
+const steamConst = require('./steam.constants');
 
 
 class SteamResourceLocator {
@@ -13,8 +10,9 @@ class SteamResourceLocator {
         return vdfPath;
     }
 
-    async getProfilePicturePath(id){
-
+    async getAvatarPath(){
+        let basePath = await this.getSteamPath();
+        let avatarPath = basePath+steamConst.AVATAR_CACHE_PATH;
     }
     
     async getSteamPath() {

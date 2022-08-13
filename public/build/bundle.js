@@ -394,33 +394,33 @@ var app = (function () {
     			button1 = element("button");
     			t9 = text("Sign in ");
     			i4 = element("i");
-    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-zasgdc");
-    			add_location(i0, file, 24, 4, 589);
-    			add_location(br0, file, 25, 4, 634);
+    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-lwajfm");
+    			add_location(i0, file, 24, 6, 597);
+    			add_location(br0, file, 25, 6, 642);
     			attr_dev(i1, "class", "bi bi-clipboard-check");
-    			add_location(i1, file, 26, 4, 645);
+    			add_location(i1, file, 26, 6, 656);
     			attr_dev(input0, "placeholder", "Enter username");
-    			attr_dev(input0, "class", "svelte-zasgdc");
-    			add_location(input0, file, 27, 4, 688);
-    			add_location(br1, file, 28, 4, 752);
+    			attr_dev(input0, "class", "svelte-lwajfm");
+    			add_location(input0, file, 27, 6, 699);
+    			add_location(br1, file, 28, 6, 767);
     			attr_dev(i2, "class", "bi bi-clipboard-check");
-    			add_location(i2, file, 29, 4, 763);
+    			add_location(i2, file, 29, 6, 781);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "Password");
-    			attr_dev(input1, "class", "svelte-zasgdc");
-    			add_location(input1, file, 30, 4, 806);
-    			add_location(br2, file, 31, 4, 880);
+    			attr_dev(input1, "class", "svelte-lwajfm");
+    			add_location(input1, file, 30, 6, 824);
+    			add_location(br2, file, 31, 6, 902);
     			attr_dev(i3, "class", "bi bi-palette");
-    			add_location(i3, file, 33, 6, 955);
+    			add_location(i3, file, 33, 8, 982);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-outline-secondary");
-    			add_location(button0, file, 32, 4, 891);
+    			add_location(button0, file, 32, 6, 916);
     			attr_dev(i4, "class", "bi bi-box-arrow-in-right run");
-    			add_location(i4, file, 35, 44, 1045);
+    			add_location(i4, file, 36, 17, 1084);
     			attr_dev(button1, "class", "btn btn-success");
-    			add_location(button1, file, 35, 4, 1005);
-    			attr_dev(div, "class", "grid-container center account-card svelte-zasgdc");
-    			add_location(div, file, 23, 1, 535);
+    			add_location(button1, file, 35, 6, 1034);
+    			attr_dev(div, "class", "grid-container center account-card svelte-lwajfm");
+    			add_location(div, file, 23, 4, 541);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -480,7 +480,7 @@ var app = (function () {
     	return block;
     }
 
-    // (39:2) {#if !showDetails}
+    // (41:2) {#if !showDetails}
     function create_if_block(ctx) {
     	let div3;
     	let div2;
@@ -510,42 +510,42 @@ var app = (function () {
     			path1 = svg_element("path");
     			path2 = svg_element("path");
     			path3 = svg_element("path");
-    			add_location(p, file, 42, 9, 1271);
-    			attr_dev(div0, "class", "text-layer svelte-zasgdc");
-    			add_location(div0, file, 41, 6, 1236);
+    			add_location(p, file, 44, 10, 1326);
+    			attr_dev(div0, "class", "text-layer svelte-lwajfm");
+    			add_location(div0, file, 43, 8, 1290);
     			attr_dev(rect, "id", "E1");
     			attr_dev(rect, "fill", /*fill1*/ ctx[3]);
     			attr_dev(rect, "width", "1600");
     			attr_dev(rect, "height", "800");
     			attr_dev(rect, "rx", "8");
-    			add_location(rect, file, 46, 12, 1466);
+    			add_location(rect, file, 53, 12, 1590);
     			attr_dev(path0, "id", "E2");
     			attr_dev(path0, "fill", /*fill2*/ ctx[4]);
     			attr_dev(path0, "d", "M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z");
-    			add_location(path0, file, 47, 12, 1541);
+    			add_location(path0, file, 54, 12, 1666);
     			attr_dev(path1, "id", "E3");
     			attr_dev(path1, "fill", /*fill3*/ ctx[5]);
     			attr_dev(path1, "d", "M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z");
-    			add_location(path1, file, 48, 12, 1767);
+    			add_location(path1, file, 59, 12, 1951);
     			attr_dev(path2, "id", "E4");
     			attr_dev(path2, "fill", /*fill4*/ ctx[6]);
     			attr_dev(path2, "d", "M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z");
-    			add_location(path2, file, 49, 12, 1989);
+    			add_location(path2, file, 64, 12, 2232);
     			attr_dev(path3, "id", "E5");
     			attr_dev(path3, "fill", /*fill5*/ ctx[7]);
     			attr_dev(path3, "d", "M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z");
-    			add_location(path3, file, 50, 12, 2209);
+    			add_location(path3, file, 69, 12, 2511);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "width", "100%");
     			attr_dev(svg, "height", "100%");
     			attr_dev(svg, "viewBox", "0 0 1000 727");
-    			add_location(svg, file, 45, 9, 1362);
-    			attr_dev(div1, "class", "background-layer svelte-zasgdc");
-    			add_location(div1, file, 44, 6, 1321);
-    			attr_dev(div2, "class", "wrap-layer svelte-zasgdc");
-    			add_location(div2, file, 40, 4, 1204);
-    			attr_dev(div3, "class", "grid-container center account-preview-card svelte-zasgdc");
-    			add_location(div3, file, 39, 2, 1142);
+    			add_location(svg, file, 47, 10, 1422);
+    			attr_dev(div1, "class", "background-layer svelte-lwajfm");
+    			add_location(div1, file, 46, 8, 1380);
+    			attr_dev(div2, "class", "wrap-layer svelte-lwajfm");
+    			add_location(div2, file, 42, 6, 1256);
+    			attr_dev(div3, "class", "grid-container center account-preview-card svelte-lwajfm");
+    			add_location(div3, file, 41, 4, 1192);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -571,7 +571,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(39:2) {#if !showDetails}",
+    		source: "(41:2) {#if !showDetails}",
     		ctx
     	});
 
@@ -591,7 +591,7 @@ var app = (function () {
     			if (if_block0) if_block0.c();
     			t = space();
     			if (if_block1) if_block1.c();
-    			add_location(main, file, 21, 0, 439);
+    			add_location(main, file, 21, 0, 442);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -775,7 +775,7 @@ var app = (function () {
 
     const file$1 = "src\\components\\account\\addAccountCard.svelte";
 
-    // (18:4) {#if !isAddOpen}
+    // (17:2) {#if !isAddOpen}
     function create_if_block_1$1(ctx) {
     	let div;
     	let p;
@@ -786,9 +786,9 @@ var app = (function () {
     			div = element("div");
     			p = element("p");
     			p.textContent = "+";
-    			add_location(p, file$1, 19, 8, 384);
-    			attr_dev(div, "class", "grid-container center add-card svelte-16z9dxr");
-    			add_location(div, file$1, 18, 1, 306);
+    			add_location(p, file$1, 18, 6, 353);
+    			attr_dev(div, "class", "grid-container center add-card svelte-bb68bq");
+    			add_location(div, file$1, 17, 4, 277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -806,14 +806,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(18:4) {#if !isAddOpen}",
+    		source: "(17:2) {#if !isAddOpen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (23:4) {#if isAddOpen}
+    // (22:2) {#if isAddOpen}
     function create_if_block$1(ctx) {
     	let div;
     	let i0;
@@ -847,23 +847,23 @@ var app = (function () {
     			i2 = element("i");
     			t5 = space();
     			input1 = element("input");
-    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-16z9dxr");
-    			add_location(i0, file$1, 24, 8, 511);
-    			add_location(br0, file$1, 25, 8, 589);
+    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-bb68bq");
+    			add_location(i0, file$1, 23, 6, 477);
+    			add_location(br0, file$1, 24, 6, 551);
     			attr_dev(i1, "class", "bi bi-clipboard-check");
-    			add_location(i1, file$1, 26, 8, 604);
+    			add_location(i1, file$1, 25, 6, 565);
     			attr_dev(input0, "placeholder", "Enter username");
-    			attr_dev(input0, "class", "svelte-16z9dxr");
-    			add_location(input0, file$1, 27, 8, 651);
-    			add_location(br1, file$1, 28, 8, 719);
+    			attr_dev(input0, "class", "svelte-bb68bq");
+    			add_location(input0, file$1, 26, 6, 608);
+    			add_location(br1, file$1, 27, 6, 676);
     			attr_dev(i2, "class", "bi bi-clipboard-check");
-    			add_location(i2, file$1, 29, 8, 734);
+    			add_location(i2, file$1, 28, 6, 690);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "Password");
-    			attr_dev(input1, "class", "svelte-16z9dxr");
-    			add_location(input1, file$1, 30, 8, 781);
-    			attr_dev(div, "class", "grid-container center account-card card-gradient svelte-16z9dxr");
-    			add_location(div, file$1, 23, 4, 439);
+    			attr_dev(input1, "class", "svelte-bb68bq");
+    			add_location(input1, file$1, 29, 6, 733);
+    			attr_dev(div, "class", "grid-container center account-card card-gradient svelte-bb68bq");
+    			add_location(div, file$1, 22, 4, 407);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -908,7 +908,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(23:4) {#if isAddOpen}",
+    		source: "(22:2) {#if isAddOpen}",
     		ctx
     	});
 
@@ -927,7 +927,7 @@ var app = (function () {
     			if (if_block0) if_block0.c();
     			t = space();
     			if (if_block1) if_block1.c();
-    			add_location(main, file$1, 16, 0, 275);
+    			add_location(main, file$1, 15, 0, 245);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
