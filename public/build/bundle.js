@@ -312,6 +312,13 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
             if (!options || (!options.target && !options.$$inline)) {
@@ -344,17 +351,19 @@ var app = (function () {
 
     // (23:2) {#if showDetails}
     function create_if_block_1(ctx) {
-    	let div;
+    	let div2;
     	let i0;
     	let t0;
     	let br0;
     	let t1;
+    	let div0;
     	let i1;
     	let t2;
     	let input0;
     	let t3;
     	let br1;
     	let t4;
+    	let div1;
     	let i2;
     	let t5;
     	let input1;
@@ -371,17 +380,19 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div2 = element("div");
     			i0 = element("i");
     			t0 = space();
     			br0 = element("br");
     			t1 = space();
+    			div0 = element("div");
     			i1 = element("i");
     			t2 = space();
     			input0 = element("input");
     			t3 = space();
     			br1 = element("br");
     			t4 = space();
+    			div1 = element("div");
     			i2 = element("i");
     			t5 = space();
     			input1 = element("input");
@@ -394,58 +405,63 @@ var app = (function () {
     			button1 = element("button");
     			t9 = text("Sign in ");
     			i4 = element("i");
-    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-lwajfm");
+    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-urgzu0");
     			add_location(i0, file, 24, 6, 597);
     			add_location(br0, file, 25, 6, 642);
     			attr_dev(i1, "class", "bi bi-clipboard-check");
-    			add_location(i1, file, 26, 6, 656);
+    			add_location(i1, file, 27, 8, 699);
     			attr_dev(input0, "placeholder", "Enter username");
-    			attr_dev(input0, "class", "svelte-lwajfm");
-    			add_location(input0, file, 27, 6, 699);
-    			add_location(br1, file, 28, 6, 767);
+    			attr_dev(input0, "class", "svelte-urgzu0");
+    			add_location(input0, file, 28, 8, 744);
+    			add_location(br1, file, 29, 8, 814);
+    			attr_dev(div0, "class", "default-margin-top svelte-urgzu0");
+    			add_location(div0, file, 26, 6, 656);
     			attr_dev(i2, "class", "bi bi-clipboard-check");
-    			add_location(i2, file, 29, 6, 781);
+    			add_location(i2, file, 32, 8, 857);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "Password");
-    			attr_dev(input1, "class", "svelte-lwajfm");
-    			add_location(input1, file, 30, 6, 824);
-    			add_location(br2, file, 31, 6, 902);
+    			attr_dev(input1, "class", "svelte-urgzu0");
+    			add_location(input1, file, 33, 8, 902);
+    			add_location(br2, file, 34, 8, 982);
+    			add_location(div1, file, 31, 6, 842);
     			attr_dev(i3, "class", "bi bi-palette");
-    			add_location(i3, file, 33, 8, 982);
+    			add_location(i3, file, 37, 8, 1076);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-outline-secondary");
-    			add_location(button0, file, 32, 6, 916);
+    			add_location(button0, file, 36, 6, 1010);
     			attr_dev(i4, "class", "bi bi-box-arrow-in-right run");
-    			add_location(i4, file, 36, 17, 1084);
+    			add_location(i4, file, 40, 17, 1178);
     			attr_dev(button1, "class", "btn btn-success");
-    			add_location(button1, file, 35, 6, 1034);
-    			attr_dev(div, "class", "grid-container center account-card svelte-lwajfm");
-    			add_location(div, file, 23, 4, 541);
+    			add_location(button1, file, 39, 6, 1128);
+    			attr_dev(div2, "class", "grid-container center account-card svelte-urgzu0");
+    			add_location(div2, file, 23, 4, 541);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, i0);
-    			append_dev(div, t0);
-    			append_dev(div, br0);
-    			append_dev(div, t1);
-    			append_dev(div, i1);
-    			append_dev(div, t2);
-    			append_dev(div, input0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, i0);
+    			append_dev(div2, t0);
+    			append_dev(div2, br0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div0);
+    			append_dev(div0, i1);
+    			append_dev(div0, t2);
+    			append_dev(div0, input0);
     			set_input_value(input0, /*username*/ ctx[0]);
-    			append_dev(div, t3);
-    			append_dev(div, br1);
-    			append_dev(div, t4);
-    			append_dev(div, i2);
-    			append_dev(div, t5);
-    			append_dev(div, input1);
+    			append_dev(div0, t3);
+    			append_dev(div0, br1);
+    			append_dev(div2, t4);
+    			append_dev(div2, div1);
+    			append_dev(div1, i2);
+    			append_dev(div1, t5);
+    			append_dev(div1, input1);
     			set_input_value(input1, /*password*/ ctx[1]);
-    			append_dev(div, t6);
-    			append_dev(div, br2);
-    			append_dev(div, t7);
-    			append_dev(div, button0);
+    			append_dev(div1, t6);
+    			append_dev(div1, br2);
+    			append_dev(div2, t7);
+    			append_dev(div2, button0);
     			append_dev(button0, i3);
-    			append_dev(div, t8);
-    			append_dev(div, button1);
+    			append_dev(div2, t8);
+    			append_dev(div2, button1);
     			append_dev(button1, t9);
     			append_dev(button1, i4);
 
@@ -464,7 +480,7 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div2);
     			run_all(dispose);
     		}
     	};
@@ -480,12 +496,13 @@ var app = (function () {
     	return block;
     }
 
-    // (41:2) {#if !showDetails}
+    // (45:2) {#if !showDetails}
     function create_if_block(ctx) {
     	let div3;
     	let div2;
     	let div0;
     	let p;
+    	let t0;
     	let t1;
     	let div1;
     	let svg;
@@ -501,7 +518,7 @@ var app = (function () {
     			div2 = element("div");
     			div0 = element("div");
     			p = element("p");
-    			p.textContent = "HOVER OVER BACKGROUND";
+    			t0 = text(/*username*/ ctx[0]);
     			t1 = space();
     			div1 = element("div");
     			svg = svg_element("svg");
@@ -510,48 +527,49 @@ var app = (function () {
     			path1 = svg_element("path");
     			path2 = svg_element("path");
     			path3 = svg_element("path");
-    			add_location(p, file, 44, 10, 1326);
-    			attr_dev(div0, "class", "text-layer svelte-lwajfm");
-    			add_location(div0, file, 43, 8, 1290);
+    			add_location(p, file, 48, 10, 1420);
+    			attr_dev(div0, "class", "text-layer svelte-urgzu0");
+    			add_location(div0, file, 47, 8, 1384);
     			attr_dev(rect, "id", "E1");
     			attr_dev(rect, "fill", /*fill1*/ ctx[3]);
     			attr_dev(rect, "width", "1600");
     			attr_dev(rect, "height", "800");
     			attr_dev(rect, "rx", "8");
-    			add_location(rect, file, 53, 12, 1590);
+    			add_location(rect, file, 57, 12, 1673);
     			attr_dev(path0, "id", "E2");
     			attr_dev(path0, "fill", /*fill2*/ ctx[4]);
     			attr_dev(path0, "d", "M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z");
-    			add_location(path0, file, 54, 12, 1666);
+    			add_location(path0, file, 58, 12, 1749);
     			attr_dev(path1, "id", "E3");
     			attr_dev(path1, "fill", /*fill3*/ ctx[5]);
     			attr_dev(path1, "d", "M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z");
-    			add_location(path1, file, 59, 12, 1951);
+    			add_location(path1, file, 63, 12, 2034);
     			attr_dev(path2, "id", "E4");
     			attr_dev(path2, "fill", /*fill4*/ ctx[6]);
     			attr_dev(path2, "d", "M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z");
-    			add_location(path2, file, 64, 12, 2232);
+    			add_location(path2, file, 68, 12, 2315);
     			attr_dev(path3, "id", "E5");
     			attr_dev(path3, "fill", /*fill5*/ ctx[7]);
     			attr_dev(path3, "d", "M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z");
-    			add_location(path3, file, 69, 12, 2511);
+    			add_location(path3, file, 73, 12, 2594);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "width", "100%");
     			attr_dev(svg, "height", "100%");
     			attr_dev(svg, "viewBox", "0 0 1000 727");
-    			add_location(svg, file, 47, 10, 1422);
-    			attr_dev(div1, "class", "background-layer svelte-lwajfm");
-    			add_location(div1, file, 46, 8, 1380);
-    			attr_dev(div2, "class", "wrap-layer svelte-lwajfm");
-    			add_location(div2, file, 42, 6, 1256);
-    			attr_dev(div3, "class", "grid-container center account-preview-card svelte-lwajfm");
-    			add_location(div3, file, 41, 4, 1192);
+    			add_location(svg, file, 51, 10, 1505);
+    			attr_dev(div1, "class", "background-layer svelte-urgzu0");
+    			add_location(div1, file, 50, 8, 1463);
+    			attr_dev(div2, "class", "wrap-layer svelte-urgzu0");
+    			add_location(div2, file, 46, 6, 1350);
+    			attr_dev(div3, "class", "grid-container center account-preview-card svelte-urgzu0");
+    			add_location(div3, file, 45, 4, 1286);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
     			append_dev(div3, div2);
     			append_dev(div2, div0);
     			append_dev(div0, p);
+    			append_dev(p, t0);
     			append_dev(div2, t1);
     			append_dev(div2, div1);
     			append_dev(div1, svg);
@@ -561,7 +579,9 @@ var app = (function () {
     			append_dev(svg, path2);
     			append_dev(svg, path3);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*username*/ 1) set_data_dev(t0, /*username*/ ctx[0]);
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
     		}
@@ -571,7 +591,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(41:2) {#if !showDetails}",
+    		source: "(45:2) {#if !showDetails}",
     		ctx
     	});
 

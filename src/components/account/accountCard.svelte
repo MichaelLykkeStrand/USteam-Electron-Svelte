@@ -24,12 +24,16 @@
     <div class="grid-container center account-card">
       <i class="bi bi-x-square icon-red" />
       <br />
-      <i class="bi bi-clipboard-check" />
-      <input bind:value={username} placeholder="Enter username" />
-      <br />
-      <i class="bi bi-clipboard-check" />
-      <input bind:value={password} type="password" placeholder="Password" />
-      <br />
+      <div class= "default-margin-top">
+        <i class="bi bi-clipboard-check" />
+        <input bind:value={username} placeholder="Enter username" />
+        <br />
+      </div>
+      <div>
+        <i class="bi bi-clipboard-check" />
+        <input bind:value={password} type="password" placeholder="Password" />
+        <br />
+      </div>
       <button type="button" class="btn btn-outline-secondary">
         <i class="bi bi-palette" />
       </button>
@@ -42,7 +46,7 @@
     <div class="grid-container center account-preview-card">
       <div class="wrap-layer">
         <div class="text-layer">
-          <p>HOVER OVER BACKGROUND</p>
+          <p>{username}</p>
         </div>
         <div class="background-layer">
           <svg
@@ -117,6 +121,10 @@
   }
   input {
     margin-bottom: 1rem;
+  }
+
+  .default-margin-top{
+    margin-top: 1rem;
   }
 
   .wrap-layer {
