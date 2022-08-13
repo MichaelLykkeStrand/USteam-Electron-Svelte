@@ -9,9 +9,8 @@ const USteamWindowManger = require('../window/usteam.window.manager');
 
 const trayMenuImageWidth = 16;
 const trayMenuImageHeight = 16;
-
 let window = require('../window/window.constants');
-let iconPath = path.join(__dirname, '../assets/icon/icon2.png');
+let iconPath = path.join(__dirname, '../icon/icon.png');
 let image = nativeImage.createFromPath(iconPath);
 let tray;
 let accountRepository;
@@ -22,6 +21,7 @@ const load = (repository) => {
 
 // Create the tray icon
 const createTray = () => {
+  console.log("ImagePath: "+iconPath);
   tray = new Tray(image)
   tray.setToolTip('U-Steam.')
   tray.on('click', function () {
@@ -97,15 +97,14 @@ const updateTrayContext = () => {
 }
 
 function compareTemplate(a, b) {
-  var nameA = a.label.toUpperCase(); // ignore upper and lowercase
-  var nameB = b.label.toUpperCase(); // ignore upper and lowercase
+  var nameA = a.label.toUpperCase();
+  var nameB = b.label.toUpperCase();
   if (nameA < nameB) {
     return -1;
   }
   if (nameA > nameB) {
     return 1;
   }
-  // names must be equal
   return 0;
 }
 

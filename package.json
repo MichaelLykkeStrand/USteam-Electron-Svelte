@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@jaames/iro": "^5.3.2",
+    "@rollup/plugin-image": "^2.1.1",
     "abort-controller": "^3.0.0",
     "axios": "^0.21.1",
     "bootstrap-icons": "^1.9.1",
