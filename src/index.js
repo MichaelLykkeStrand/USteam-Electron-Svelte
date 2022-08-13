@@ -45,6 +45,14 @@ app.whenReady().then(() => {
     console.log("Steam path: "+path);
   });
 
+  locator.getAvatarPath().then((path)=>{
+    console.log("Avatar path: "+path);
+  });
+
+  locator.getProfileVdfPath().then((path)=>{
+    console.log("Profilevdf path: "+path);
+  });
+
   console.log(path);
   showLoginPrompt();
   app.on('activate', function () {

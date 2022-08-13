@@ -13,6 +13,7 @@ class SteamResourceLocator {
     async getAvatarPath(){
         let basePath = await this.getSteamPath();
         let avatarPath = basePath+steamConst.AVATAR_CACHE_PATH;
+        return avatarPath;
     }
     
     async getSteamPath() {

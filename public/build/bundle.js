@@ -1081,9 +1081,9 @@ var app = (function () {
     			create_component(accountcard2.$$.fragment);
     			t2 = space();
     			create_component(addaccountcard.$$.fragment);
-    			attr_dev(div0, "class", "grid-container svelte-1uuymtl");
+    			attr_dev(div0, "class", "grid-container svelte-1pu1711");
     			add_location(div0, file$2, 7, 2, 172);
-    			attr_dev(div1, "class", "container-center svelte-1uuymtl");
+    			attr_dev(div1, "class", "container-center svelte-1pu1711");
     			add_location(div1, file$2, 6, 1, 138);
     			add_location(main, file$2, 5, 0, 129);
     		},

@@ -15,7 +15,7 @@
 </main>
 
 <style>
-	@media only screen and (max-width: 1154px) {
+	@media only screen and (max-width: 1165px) {
 		.grid-container {
 			display: flex;
 			flex-wrap: wrap;
@@ -23,7 +23,7 @@
 			padding: 10px;
 		}
 	}
-	@media only screen and (min-width: 1154px) {
+	@media only screen and (min-width: 1165px) {
 		.grid-container {
 			display: flex;
 			flex-wrap: wrap;
