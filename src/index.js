@@ -8,6 +8,7 @@ const Alert = require('electron-alert');
 const AccountRepository = require('./account/account.repo');
 const SettingRepository = require('./settings/setting.repo');
 const SteamResourceLocator = require('./steam/steam.resource.Locator');
+const SteamRepository = require('./steam/steam.repo');
 
 const USteamTray = require('./tray/usteam.tray');
 const USteamWindowManger = require('./window/usteam.window.manager');
@@ -40,20 +41,25 @@ let dataSaveListener = {
 app.whenReady().then(() => {
   //Check settings
   settingRepository = new SettingRepository();
-  let locator = new SteamResourceLocator();
-  locator.getSteamPath().then((path)=>{
+  SteamResourceLocator.getSteamPath().then((path)=>{
     console.log("Steam path: "+path);
   });
 
-  locator.getAvatarPath().then((path)=>{
+  SteamResourceLocator.getAvatarPath().then((path)=>{
     console.log("Avatar path: "+path);
   });
 
-  locator.getProfileVdfPath().then((path)=>{
+  SteamResourceLocator.getProfileVdfPath().then((path)=>{
     console.log("Profilevdf path: "+path);
   });
 
+
   console.log(path);
+
+  let steamRepo = new SteamRepository();
+  steamRepo.getAccounts().then((accounts)=>{
+
+  });
   showLoginPrompt();
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

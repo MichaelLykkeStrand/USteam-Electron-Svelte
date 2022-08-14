@@ -4,19 +4,19 @@ const steamConst = require('./steam.constants');
 
 
 class SteamResourceLocator {
-    async getProfileVdfPath(){
+    static async getProfileVdfPath(){
         let basePath = await this.getSteamPath();
         let vdfPath = basePath+steamConst.CONFIG_PATH+steamConst.USER_VDF
         return vdfPath;
     }
 
-    async getAvatarPath(){
+    static async getAvatarPath(){
         let basePath = await this.getSteamPath();
         let avatarPath = basePath+steamConst.AVATAR_CACHE_PATH;
         return avatarPath;
     }
     
-    async getSteamPath() {
+    static async getSteamPath() {
         let url = await findSteam();
         return url;
     }
