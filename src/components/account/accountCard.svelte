@@ -3,6 +3,8 @@
   import { fade } from "svelte/transition";
   let username = "MyUser";
   let password = "MyPassword";
+  let avatarImg =
+    "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
   let showDetails = false;
 
   let fill1 = "#ffaa00";
@@ -21,10 +23,10 @@
 
 <main on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
   {#if showDetails}
-    <div class="grid-container center account-card">
+    <div class="grid-container account-card">
       <i class="bi bi-x-square icon-red" />
       <br />
-      <div class= "default-margin-top">
+      <div class="default-margin-top">
         <i class="bi bi-clipboard-check" />
         <input bind:value={username} placeholder="Enter username" />
         <br />
@@ -43,10 +45,11 @@
     </div>
   {/if}
   {#if !showDetails}
-    <div class="grid-container center account-preview-card">
+    <div class="grid-container account-preview-card">
       <div class="wrap-layer">
         <div class="text-layer">
-          <p>{username}</p>
+          <img src={avatarImg} alt="avatarImg" class="center" />
+          <strong>{username}</strong>
         </div>
         <div class="background-layer">
           <svg
@@ -123,7 +126,7 @@
     margin-bottom: 1rem;
   }
 
-  .default-margin-top{
+  .default-margin-top {
     margin-top: 1rem;
   }
 
@@ -145,6 +148,13 @@
     pointer-events: none;
   }
 
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
   .background-layer {
     width: 100%;
     height: 100%;
@@ -153,4 +163,8 @@
     -o-background-size: cover;
     background-size: cover;
   }
+
+  img {
+  border-radius: 50%;
+  } 
 </style>
