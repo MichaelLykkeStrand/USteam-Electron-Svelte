@@ -1,17 +1,36 @@
 <script>
+  import { normal } from 'color-blend'
+  import { convertRgbToHex, convertHexToRgb } from '@mdhnpm/rgb-hex-converter';
+
   export let account;
-  import { fade } from "svelte/transition";
+  if(account == undefined){
+    account = {};
+    account.color = "#fafa6e";
+  }
   let username = "MyUser";
   let password = "MyPassword";
   let avatarImg =
     "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
   let showDetails = false;
 
-  let fill1 = "#ffaa00";
-  let fill2 = "#ffbe00";
-  let fill3 = "#ffcc00";
-  let fill4 = "#ffe529";
-  let fill5 = "#fff852";
+
+  let rgbaArray = convertHexToRgb("#482a58");
+  let rgb = {r:rgbaArray[0],g:rgbaArray[1],b:rgbaArray[2], a:1}
+  console.log(rgb);
+  let rgbaArray2 = convertHexToRgb(account.color);
+  let rgb2 = {r:rgbaArray2[0],g:rgbaArray2[1],b:rgbaArray2[2], a:1}
+  console.log(rgb2);
+  let color = normal(rgb,rgb2);
+  console.log(color);
+
+  let hexColor = "#"+convertRgbToHex(color.r, color.g, color.b);
+  console.log("hex: "+hexColor);
+   
+  let fill1 = hexColor;
+  let fill2 = "#482a58";
+  let fill3 = "#482a58";
+  let fill4 = "#482a58";
+  let fill5 = "#482a58";
 
   function handleMouseEnter(e) {
     showDetails = true;

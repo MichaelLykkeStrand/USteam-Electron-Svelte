@@ -1,11 +1,8 @@
 const find = require('find-process');
 const { exec } = require('child_process');
-const AbortController = require('abort-controller');
-const fetch = require('node-fetch');
 const settings = require('electron-settings');
 let settingsConstants = require('../settings/settingsConstants');
 let timer = require('../utils/timer');
-const vdf = require('simple-vdf');
 
 class Steam {
   constructor() {

@@ -6,7 +6,7 @@
 <main>
 	<div class="container-center">
 		<div class="grid-container">
-			<AccountCard />
+			<AccountCard fill1={"#336ab1"} fill2={"#5771cd"} fill3={"#8275e3"} fill4={"#b274f2"} fill5={"#e56efa"}/>
 			<AccountCard />
 			<AccountCard />
 			<AddAccountCard />
