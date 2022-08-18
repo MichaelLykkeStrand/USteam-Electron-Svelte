@@ -27,13 +27,20 @@
       <i class="bi bi-x-square icon-red" />
       <br />
       <div class="default-margin-top">
-        <i class="bi bi-clipboard-check" />
-        <input bind:value={username} placeholder="Enter username" />
-        <br />
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="bi bi-clipboard-check btn btn-dark" />
+          </div>
+          <input class="form-control" bind:value={username} type="text" placeholder="Username" />
+        </div>
       </div>
       <div>
-        <i class="bi bi-clipboard-check" />
-        <input bind:value={password} type="password" placeholder="Password" />
+        <div class="input-group flex-nowrap">
+          <div class="input-group-prepend">
+            <button class="bi bi-clipboard-check btn btn-dark" />
+          </div>
+          <input class="form-control" bind:value={password} type="password" placeholder="Password" />
+        </div>
         <br />
       </div>
       <button type="button" class="btn btn-outline-secondary">
