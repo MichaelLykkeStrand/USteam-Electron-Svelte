@@ -337,7 +337,7 @@ var app = (function () {
         $inject_state() { }
     }
 
-    function n(n,r,t){return {r:255*t(n.r/255,r.r/255),g:255*t(n.g/255,r.g/255),b:255*t(n.b/255,r.b/255)}}function r(n,r){return r}function M(n,r,t){return Math.min(Math.max(n||0,r),t)}function m(n){return {r:M(n.r,0,255),g:M(n.g,0,255),b:M(n.b,0,255),a:M(n.a,0,1)}}function d(n){return {r:255*n.r,g:255*n.g,b:255*n.b,a:n.a}}function p(n){return {r:n.r/255,g:n.g/255,b:n.b/255,a:n.a}}function v(n,r){void 0===r&&(r=0);var t=Math.pow(10,r);return {r:Math.round(n.r*t)/t,g:Math.round(n.g*t)/t,b:Math.round(n.b*t)/t,a:n.a}}function x(n,r,t,u,i,o){return (1-r/t)*u+r/t*Math.round((1-n)*i+n*o)}function O(n,r,t,u,i){void 0===i&&(i={unitInput:!1,unitOutput:!1,roundOutput:!0}),i.unitInput&&(n=d(n),r=d(r)),n=m(n);var o=(r=m(r)).a+n.a-r.a*n.a,e=t(n,r,u),c=m({r:x(n.a,r.a,o,n.r,r.r,e.r),g:x(n.a,r.a,o,n.g,r.g,e.g),b:x(n.a,r.a,o,n.b,r.b,e.b),a:o});return c=i.unitOutput?p(c):i.roundOutput?v(c):function(n){return v(n,9)}(c),c}function A(t,u){return O(t,u,n,r)}
+    function n(n,r,t){return {r:255*t(n.r/255,r.r/255),g:255*t(n.g/255,r.g/255),b:255*t(n.b/255,r.b/255)}}function r(n,r){return r}function M(n,r,t){return Math.min(Math.max(n||0,r),t)}function m(n){return {r:M(n.r,0,255),g:M(n.g,0,255),b:M(n.b,0,255),a:M(n.a,0,1)}}function d(n){return {r:255*n.r,g:255*n.g,b:255*n.b,a:n.a}}function p(n){return {r:n.r/255,g:n.g/255,b:n.b/255,a:n.a}}function v(n,r){void 0===r&&(r=0);var t=Math.pow(10,r);return {r:Math.round(n.r*t)/t,g:Math.round(n.g*t)/t,b:Math.round(n.b*t)/t,a:n.a}}function x(n,r,t,u,i,o){return (1-r/t)*u+r/t*Math.round((1-n)*i+n*o)}function O(n,r,t,u,i){void 0===i&&(i={unitInput:!1,unitOutput:!1,roundOutput:!0}),i.unitInput&&(n=d(n),r=d(r)),n=m(n);var o=(r=m(r)).a+n.a-r.a*n.a,e=t(n,r,u),c=m({r:x(n.a,r.a,o,n.r,r.r,e.r),g:x(n.a,r.a,o,n.g,r.g,e.g),b:x(n.a,r.a,o,n.b,r.b,e.b),a:o});return c=i.unitOutput?p(c):i.roundOutput?v(c):function(n){return v(n,9)}(c),c}function s(n,r,t){return d(t(p(n),p(r)))}function I(n){return .3*n.r+.59*n.g+.11*n.b}function q(n,r){var t=r-I(n);return function(n){var r=I(n),t=n.r,u=n.g,i=n.b,o=Math.min(t,u,i),e=Math.max(t,u,i);function c(n){return r+(n-r)*r/(r-o)}function f(n){return r+(n-r)*(1-r)/(e-r)}return o<0&&(t=c(t),u=c(u),i=c(i)),e>1&&(t=f(t),u=f(u),i=f(i)),{r:t,g:u,b:i}}({r:n.r+t,g:n.g+t,b:n.b+t})}function w(n){return Math.max(n.r,n.g,n.b)-Math.min(n.r,n.g,n.b)}function j(n,r){var t=["r","g","b"].sort(function(r,t){return n[r]-n[t]}),u=t[0],i=t[1],o=t[2],e={r:n.r,g:n.g,b:n.b};return e[o]>e[u]?(e[i]=(e[i]-e[u])*r/(e[o]-e[u]),e[o]=r):e[i]=e[o]=0,e[u]=0,e}function k(n,r){return q(j(r,w(n)),I(n))}function l(n,r){return q(j(n,w(r)),I(n))}function A(t,u){return O(t,u,n,r)}function P(n,r){return O(n,r,s,k)}function Q(n,r){return O(n,r,s,l)}
 
     function unwrapExports (x) {
     	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -435,7 +435,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\components\\account\\accountCard.svelte";
 
-    // (44:2) {#if showDetails}
+    // (50:2) {#if showDetails}
     function create_if_block_1(ctx) {
     	let div6;
     	let i0;
@@ -495,44 +495,44 @@ var app = (function () {
     			button3 = element("button");
     			t8 = text("Sign in ");
     			i2 = element("i");
-    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-1chuael");
-    			add_location(i0, file, 45, 6, 1313);
-    			add_location(br0, file, 46, 6, 1358);
+    			attr_dev(i0, "class", "bi bi-x-square icon-red svelte-1bguvep");
+    			add_location(i0, file, 51, 6, 1650);
+    			add_location(br0, file, 52, 6, 1695);
     			attr_dev(button0, "class", "bi bi-clipboard-check btn btn-dark");
-    			add_location(button0, file, 50, 12, 1503);
+    			add_location(button0, file, 56, 12, 1840);
     			attr_dev(div0, "class", "input-group-prepend");
-    			add_location(div0, file, 49, 10, 1456);
-    			attr_dev(input0, "class", "form-control svelte-1chuael");
+    			add_location(div0, file, 55, 10, 1793);
+    			attr_dev(input0, "class", "form-control svelte-1bguvep");
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Username");
-    			add_location(input0, file, 52, 10, 1586);
+    			add_location(input0, file, 58, 10, 1923);
     			attr_dev(div1, "class", "input-group mb-3");
-    			add_location(div1, file, 48, 8, 1414);
-    			attr_dev(div2, "class", "default-margin-top svelte-1chuael");
-    			add_location(div2, file, 47, 6, 1372);
+    			add_location(div1, file, 54, 8, 1751);
+    			attr_dev(div2, "class", "default-margin-top svelte-1bguvep");
+    			add_location(div2, file, 53, 6, 1709);
     			attr_dev(button1, "class", "bi bi-clipboard-check btn btn-dark");
-    			add_location(button1, file, 58, 12, 1822);
+    			add_location(button1, file, 69, 12, 2222);
     			attr_dev(div3, "class", "input-group-prepend");
-    			add_location(div3, file, 57, 10, 1775);
-    			attr_dev(input1, "class", "form-control svelte-1chuael");
+    			add_location(div3, file, 68, 10, 2175);
+    			attr_dev(input1, "class", "form-control svelte-1bguvep");
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "Password");
-    			add_location(input1, file, 60, 10, 1905);
+    			add_location(input1, file, 71, 10, 2305);
     			attr_dev(div4, "class", "input-group flex-nowrap");
-    			add_location(div4, file, 56, 8, 1726);
-    			add_location(br1, file, 62, 8, 2022);
-    			add_location(div5, file, 55, 6, 1711);
+    			add_location(div4, file, 67, 8, 2126);
+    			add_location(br1, file, 78, 8, 2485);
+    			add_location(div5, file, 66, 6, 2111);
     			attr_dev(i1, "class", "bi bi-palette");
-    			add_location(i1, file, 65, 8, 2116);
+    			add_location(i1, file, 81, 8, 2579);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-outline-secondary");
-    			add_location(button2, file, 64, 6, 2050);
+    			add_location(button2, file, 80, 6, 2513);
     			attr_dev(i2, "class", "bi bi-box-arrow-in-right run");
-    			add_location(i2, file, 68, 17, 2218);
+    			add_location(i2, file, 84, 17, 2681);
     			attr_dev(button3, "class", "btn btn-success");
-    			add_location(button3, file, 67, 6, 2168);
-    			attr_dev(div6, "class", "grid-container account-card svelte-1chuael");
-    			add_location(div6, file, 44, 4, 1264);
+    			add_location(button3, file, 83, 6, 2631);
+    			attr_dev(div6, "class", "grid-container account-card svelte-1bguvep");
+    			add_location(div6, file, 50, 4, 1601);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div6, anchor);
@@ -566,8 +566,8 @@ var app = (function () {
     			append_dev(button3, i2);
 
     			dispose = [
-    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[18]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[19])
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[14]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[15])
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -589,14 +589,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(44:2) {#if showDetails}",
+    		source: "(50:2) {#if showDetails}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:2) {#if !showDetails}
+    // (89:2) {#if !showDetails}
     function create_if_block(ctx) {
     	let div3;
     	let div2;
@@ -634,44 +634,44 @@ var app = (function () {
     			path3 = svg_element("path");
     			if (img.src !== (img_src_value = /*avatarImg*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "avatarImg");
-    			attr_dev(img, "class", "center svelte-1chuael");
-    			add_location(img, file, 76, 10, 2453);
-    			add_location(strong, file, 77, 10, 2519);
-    			attr_dev(div0, "class", "text-layer svelte-1chuael");
-    			add_location(div0, file, 75, 8, 2417);
+    			attr_dev(img, "class", "center svelte-1bguvep");
+    			add_location(img, file, 92, 10, 2916);
+    			add_location(strong, file, 93, 10, 2982);
+    			attr_dev(div0, "class", "text-layer svelte-1bguvep");
+    			add_location(div0, file, 91, 8, 2880);
     			attr_dev(rect, "id", "E1");
     			attr_dev(rect, "fill", /*fill1*/ ctx[4]);
     			attr_dev(rect, "width", "1600");
     			attr_dev(rect, "height", "800");
     			attr_dev(rect, "rx", "8");
-    			add_location(rect, file, 86, 12, 2782);
+    			add_location(rect, file, 102, 12, 3245);
     			attr_dev(path0, "id", "E2");
     			attr_dev(path0, "fill", /*fill2*/ ctx[5]);
     			attr_dev(path0, "d", "M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z");
-    			add_location(path0, file, 87, 12, 2858);
+    			add_location(path0, file, 103, 12, 3321);
     			attr_dev(path1, "id", "E3");
     			attr_dev(path1, "fill", /*fill3*/ ctx[6]);
     			attr_dev(path1, "d", "M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z");
-    			add_location(path1, file, 92, 12, 3143);
+    			add_location(path1, file, 108, 12, 3606);
     			attr_dev(path2, "id", "E4");
     			attr_dev(path2, "fill", /*fill4*/ ctx[7]);
     			attr_dev(path2, "d", "M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z");
-    			add_location(path2, file, 97, 12, 3424);
+    			add_location(path2, file, 113, 12, 3887);
     			attr_dev(path3, "id", "E5");
     			attr_dev(path3, "fill", /*fill5*/ ctx[8]);
     			attr_dev(path3, "d", "M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z");
-    			add_location(path3, file, 102, 12, 3703);
+    			add_location(path3, file, 118, 12, 4166);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "width", "100%");
     			attr_dev(svg, "height", "100%");
     			attr_dev(svg, "viewBox", "0 0 1000 727");
-    			add_location(svg, file, 80, 10, 2614);
-    			attr_dev(div1, "class", "background-layer svelte-1chuael");
-    			add_location(div1, file, 79, 8, 2572);
-    			attr_dev(div2, "class", "wrap-layer svelte-1chuael");
-    			add_location(div2, file, 74, 6, 2383);
-    			attr_dev(div3, "class", "grid-container account-preview-card svelte-1chuael");
-    			add_location(div3, file, 73, 4, 2326);
+    			add_location(svg, file, 96, 10, 3077);
+    			attr_dev(div1, "class", "background-layer svelte-1bguvep");
+    			add_location(div1, file, 95, 8, 3035);
+    			attr_dev(div2, "class", "wrap-layer svelte-1bguvep");
+    			add_location(div2, file, 90, 6, 2846);
+    			attr_dev(div3, "class", "grid-container account-preview-card svelte-1bguvep");
+    			add_location(div3, file, 89, 4, 2789);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -702,7 +702,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(73:2) {#if !showDetails}",
+    		source: "(89:2) {#if !showDetails}",
     		ctx
     	});
 
@@ -722,7 +722,7 @@ var app = (function () {
     			if (if_block0) if_block0.c();
     			t = space();
     			if (if_block1) if_block1.c();
-    			add_location(main, file, 42, 0, 1165);
+    			add_location(main, file, 48, 0, 1502);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -787,6 +787,7 @@ var app = (function () {
     }
 
     function instance($$self, $$props, $$invalidate) {
+    	var rgb2hex = require("rgb2hex");
     	let { account } = $$props;
 
     	if (account == undefined) {
@@ -798,35 +799,41 @@ var app = (function () {
     	let password = "MyPassword";
     	let avatarImg = "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
     	let showDetails = false;
-    	let rgbaArray = dist_2("#482a58");
-
-    	let rgb = {
-    		r: rgbaArray[0],
-    		g: rgbaArray[1],
-    		b: rgbaArray[2],
-    		a: 1
-    	};
-
-    	console.log(rgb);
-    	let rgbaArray2 = dist_2(account.color);
-
-    	let rgb2 = {
-    		r: rgbaArray2[0],
-    		g: rgbaArray2[1],
-    		b: rgbaArray2[2],
-    		a: 1
-    	};
-
-    	console.log(rgb2);
-    	let color = A(rgb, rgb2);
-    	console.log(color);
-    	let hexColor = "#" + dist_1(color.r, color.g, color.b);
-    	console.log("hex: " + hexColor);
-    	let fill1 = hexColor;
-    	let fill2 = "#482a58";
+    	let fill1 = getGradientColor("#482a58", account.color);
+    	let fill2 = getGradientColor("#482a58", account.color);
     	let fill3 = "#482a58";
     	let fill4 = "#482a58";
     	let fill5 = "#482a58";
+
+    	function getGradientColor(hex1, hex2) {
+    		let rgbaArray = dist_2(hex1);
+
+    		let rgb = {
+    			r: rgbaArray[0],
+    			g: rgbaArray[1],
+    			b: rgbaArray[2],
+    			a: 1
+    		};
+
+    		console.log("original1:");
+    		console.log(rgb);
+    		let rgbaArray2 = dist_2(hex2);
+
+    		let rgb2 = {
+    			r: rgbaArray2[0],
+    			g: rgbaArray2[1],
+    			b: rgbaArray2[2],
+    			a: 1
+    		};
+
+    		console.log("original2:");
+    		console.log(rgb2);
+    		let color = Q(rgb, rgb2);
+    		console.log("final:");
+    		console.log(color);
+    		console.log(rgb2hex("rgb(" + color.r + "," + color.g + "," + color.b + ")").hex);
+    		return rgb2hex("rgb(" + color.r + "," + color.g + "," + color.b + ")").hex;
+    	}
 
     	function handleMouseEnter(e) {
     		$$invalidate(2, showDetails = true);
@@ -858,42 +865,36 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		normal: A,
+    		hue: P,
+    		saturation: Q,
     		convertRgbToHex: dist_1,
     		convertHexToRgb: dist_2,
+    		rgb2hex,
     		account,
     		username,
     		password,
     		avatarImg,
     		showDetails,
-    		rgbaArray,
-    		rgb,
-    		rgbaArray2,
-    		rgb2,
-    		color,
-    		hexColor,
     		fill1,
     		fill2,
     		fill3,
     		fill4,
     		fill5,
+    		getGradientColor,
     		handleMouseEnter,
     		handleMouseLeave,
+    		require,
     		undefined,
     		console
     	});
 
     	$$self.$inject_state = $$props => {
+    		if ("rgb2hex" in $$props) rgb2hex = $$props.rgb2hex;
     		if ("account" in $$props) $$invalidate(11, account = $$props.account);
     		if ("username" in $$props) $$invalidate(0, username = $$props.username);
     		if ("password" in $$props) $$invalidate(1, password = $$props.password);
     		if ("avatarImg" in $$props) $$invalidate(3, avatarImg = $$props.avatarImg);
     		if ("showDetails" in $$props) $$invalidate(2, showDetails = $$props.showDetails);
-    		if ("rgbaArray" in $$props) rgbaArray = $$props.rgbaArray;
-    		if ("rgb" in $$props) rgb = $$props.rgb;
-    		if ("rgbaArray2" in $$props) rgbaArray2 = $$props.rgbaArray2;
-    		if ("rgb2" in $$props) rgb2 = $$props.rgb2;
-    		if ("color" in $$props) color = $$props.color;
-    		if ("hexColor" in $$props) hexColor = $$props.hexColor;
     		if ("fill1" in $$props) $$invalidate(4, fill1 = $$props.fill1);
     		if ("fill2" in $$props) $$invalidate(5, fill2 = $$props.fill2);
     		if ("fill3" in $$props) $$invalidate(6, fill3 = $$props.fill3);
@@ -918,12 +919,8 @@ var app = (function () {
     		handleMouseEnter,
     		handleMouseLeave,
     		account,
-    		rgbaArray,
-    		rgb,
-    		rgbaArray2,
-    		rgb2,
-    		color,
-    		hexColor,
+    		rgb2hex,
+    		getGradientColor,
     		input0_input_handler,
     		input1_input_handler
     	];

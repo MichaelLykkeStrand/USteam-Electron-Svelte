@@ -1,9 +1,11 @@
 <script>
-  import { normal } from 'color-blend'
-  import { convertRgbToHex, convertHexToRgb } from '@mdhnpm/rgb-hex-converter';
+  import { normal, hue, saturation } from "color-blend";
+  import { convertRgbToHex, convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
+  var rgb2hex = require('rgb2hex');
+  
 
   export let account;
-  if(account == undefined){
+  if (account == undefined) {
     account = {};
     account.color = "#fafa6e";
   }
@@ -13,24 +15,28 @@
     "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
   let showDetails = false;
 
-
-  let rgbaArray = convertHexToRgb("#482a58");
-  let rgb = {r:rgbaArray[0],g:rgbaArray[1],b:rgbaArray[2], a:1}
-  console.log(rgb);
-  let rgbaArray2 = convertHexToRgb(account.color);
-  let rgb2 = {r:rgbaArray2[0],g:rgbaArray2[1],b:rgbaArray2[2], a:1}
-  console.log(rgb2);
-  let color = normal(rgb,rgb2);
-  console.log(color);
-
-  let hexColor = "#"+convertRgbToHex(color.r, color.g, color.b);
-  console.log("hex: "+hexColor);
-   
-  let fill1 = hexColor;
-  let fill2 = "#482a58";
+  let fill1 = getGradientColor("#482a58", account.color);
+  let fill2 = getGradientColor("#482a58", account.color)
   let fill3 = "#482a58";
   let fill4 = "#482a58";
   let fill5 = "#482a58";
+
+  function getGradientColor(hex1, hex2) {
+    let rgbaArray = convertHexToRgb(hex1);
+    let rgb = { r: rgbaArray[0], g: rgbaArray[1], b: rgbaArray[2], a: 1 };
+    console.log("original1:");
+    console.log(rgb);
+    let rgbaArray2 = convertHexToRgb(hex2);
+    let rgb2 = { r: rgbaArray2[0], g: rgbaArray2[1], b: rgbaArray2[2], a: 1 };
+    console.log("original2:");
+    console.log(rgb2);
+    let color = saturation(rgb, rgb2);
+    console.log("final:");
+    console.log(color);
+    console.log(rgb2hex('rgb('+color.r+','+color.g+','+ color.b+')').hex);
+    
+    return rgb2hex('rgb('+color.r+','+color.g+','+ color.b+')').hex;
+  }
 
   function handleMouseEnter(e) {
     showDetails = true;
@@ -50,7 +56,12 @@
           <div class="input-group-prepend">
             <button class="bi bi-clipboard-check btn btn-dark" />
           </div>
-          <input class="form-control" bind:value={username} type="text" placeholder="Username" />
+          <input
+            class="form-control"
+            bind:value={username}
+            type="text"
+            placeholder="Username"
+          />
         </div>
       </div>
       <div>
@@ -58,7 +69,12 @@
           <div class="input-group-prepend">
             <button class="bi bi-clipboard-check btn btn-dark" />
           </div>
-          <input class="form-control" bind:value={password} type="password" placeholder="Password" />
+          <input
+            class="form-control"
+            bind:value={password}
+            type="password"
+            placeholder="Password"
+          />
         </div>
         <br />
       </div>
@@ -191,6 +207,6 @@
   }
 
   img {
-  border-radius: 50%;
-  } 
+    border-radius: 50%;
+  }
 </style>
