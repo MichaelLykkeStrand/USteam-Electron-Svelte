@@ -1,5 +1,5 @@
 <script>
-  import { normal, hue, saturation } from "color-blend";
+  import { normal, hue, saturation, color, multiply } from "color-blend";
   import { convertRgbToHex, convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
   var rgb2hex = require('rgb2hex');
   
@@ -7,35 +7,35 @@
   export let account;
   if (account == undefined) {
     account = {};
-    account.color = "#fafa6e";
+    account.color = "#fa976e";
   }
+  let defaultColor = "#482a58";
   let username = "MyUser";
   let password = "MyPassword";
   let avatarImg =
     "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
   let showDetails = false;
 
-  let fill1 = getGradientColor("#482a58", account.color);
-  let fill2 = getGradientColor("#482a58", account.color)
-  let fill3 = "#482a58";
-  let fill4 = "#482a58";
-  let fill5 = "#482a58";
+  let fill1 = getGradientColor(account.color, defaultColor);
+  let fill2 = getGradientColor(defaultColor, fill1)
+  let fill3 = getGradientColor(defaultColor, fill2)
+  let fill4 = getGradientColor(defaultColor, fill3)
+  let fill5 = getGradientColor(defaultColor, fill4)
 
   function getGradientColor(hex1, hex2) {
     let rgbaArray = convertHexToRgb(hex1);
-    let rgb = { r: rgbaArray[0], g: rgbaArray[1], b: rgbaArray[2], a: 1 };
+    let rgb = { r: rgbaArray[0], g: rgbaArray[1], b: rgbaArray[2], a: 0.5 };
     console.log("original1:");
     console.log(rgb);
     let rgbaArray2 = convertHexToRgb(hex2);
-    let rgb2 = { r: rgbaArray2[0], g: rgbaArray2[1], b: rgbaArray2[2], a: 1 };
+    let rgb2 = { r: rgbaArray2[0], g: rgbaArray2[1], b: rgbaArray2[2], a: 0.5 };
     console.log("original2:");
     console.log(rgb2);
-    let color = saturation(rgb, rgb2);
+    let colorResult = color(rgb, rgb2);
     console.log("final:");
-    console.log(color);
-    console.log(rgb2hex('rgb('+color.r+','+color.g+','+ color.b+')').hex);
-    
-    return rgb2hex('rgb('+color.r+','+color.g+','+ color.b+')').hex;
+    console.log(colorResult);
+    console.log(rgb2hex('rgb('+colorResult.r+','+colorResult.g+','+ colorResult.b+')').hex);
+    return rgb2hex('rgb('+colorResult.r+','+colorResult.g+','+ colorResult.b+')').hex;
   }
 
   function handleMouseEnter(e) {
