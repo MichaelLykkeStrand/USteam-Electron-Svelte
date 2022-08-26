@@ -1,15 +1,14 @@
 <script>
   import { color } from "color-blend";
   import { convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
-  import ChromaPicker from 'svelte-chroma-picker';
-  var rgb2hex = require('rgb2hex');
-  
+  import ColorPicker from "./shared/colorPicker.svelte";
+  var rgb2hex = require("rgb2hex");
 
   export let account;
   if (account == undefined) {
-    account = {color: "#ff5733"};
+    account = { color: "#ff5733" };
   }
-  
+
   let defaultColor = "#3c2363";
   let username = "MyUser";
   let password = "MyPassword";
@@ -18,10 +17,10 @@
   let showDetails = false;
 
   let fill1 = getGradientColor(account.color, defaultColor);
-  let fill2 = getGradientColor(defaultColor, fill1)
-  let fill3 = getGradientColor(defaultColor, fill2)
-  let fill4 = getGradientColor(defaultColor, fill3)
-  let fill5 = getGradientColor(defaultColor, fill4)
+  let fill2 = getGradientColor(defaultColor, fill1);
+  let fill3 = getGradientColor(defaultColor, fill2);
+  let fill4 = getGradientColor(defaultColor, fill3);
+  let fill5 = getGradientColor(defaultColor, fill4);
 
   function getGradientColor(hex1, hex2) {
     let rgbaArray = convertHexToRgb(hex1);
@@ -35,8 +34,14 @@
     let colorResult = color(rgb, rgb2);
     console.log("final:");
     console.log(colorResult);
-    console.log(rgb2hex('rgb('+colorResult.r+','+colorResult.g+','+ colorResult.b+')').hex);
-    return rgb2hex('rgb('+colorResult.r+','+colorResult.g+','+ colorResult.b+')').hex;
+    console.log(
+      rgb2hex(
+        "rgb(" + colorResult.r + "," + colorResult.g + "," + colorResult.b + ")"
+      ).hex
+    );
+    return rgb2hex(
+      "rgb(" + colorResult.r + "," + colorResult.g + "," + colorResult.b + ")"
+    ).hex;
   }
 
   function handleMouseEnter(e) {
@@ -49,43 +54,42 @@
 
 <main on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
   {#if showDetails}
-    <div class="grid-container account-card">
-      <i class="bi bi-x-square icon-red" />
-      <br />
-      <div class="default-margin-top">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <button class="bi bi-clipboard-check btn btn-dark" />
-          </div>
-          <input
-            class="form-control"
-            bind:value={username}
-            type="text"
-            placeholder="Username"
-          />
-        </div>
-      </div>
-      <div>
-        <div class="input-group flex-nowrap">
-          <div class="input-group-prepend">
-            <button class="bi bi-clipboard-check btn btn-dark" />
-          </div>
-          <input
-            class="form-control"
-            bind:value={password}
-            type="password"
-            placeholder="Password"
-          />
-        </div>
+    <div class="relative-wrap">
+      <div class="grid-container account-card">
+        <i class="bi bi-x-square icon-red" />
         <br />
+        <div class="default-margin-top">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="bi bi-clipboard-check btn btn-dark" />
+            </div>
+            <input
+              class="form-control"
+              bind:value={username}
+              type="text"
+              placeholder="Username"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <button class="bi bi-clipboard-check btn btn-dark" />
+            </div>
+            <input
+              class="form-control"
+              bind:value={password}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <br />
+        </div>
+        <ColorPicker bind:value={account.color} />
+        <button class="btn btn-success"
+          >Sign in <i class="bi bi-box-arrow-in-right run" /></button
+        >
       </div>
-      <button type="button" class="btn btn-outline-secondary">
-        <i class="bi bi-palette" />
-      </button>
-      <ChromaPicker bind:value={account.color} />
-      <button class="btn btn-success"
-        >Sign in <i class="bi bi-box-arrow-in-right run" /></button
-      >
     </div>
   {/if}
   {#if !showDetails}
@@ -131,8 +135,12 @@
 </main>
 
 <style>
-  .account-card {
+
+.relative-wrap {
     position: relative;
+}
+
+  .account-card {
     text-align: center;
     display: inline-block;
     margin: 15px;

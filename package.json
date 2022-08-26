@@ -47,6 +47,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "^3.4.1",
     "@jaames/iro": "^5.3.2",
+    "@lukeed/uuid": "^2.0.0",
     "@mdhnpm/rgb-hex-converter": "^1.2.0",
     "@rollup/plugin-image": "^2.1.1",
     "abort-controller": "^3.0.0",
