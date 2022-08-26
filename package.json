@@ -45,6 +45,7 @@
     }
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^3.4.1",
     "@jaames/iro": "^5.3.2",
     "@mdhnpm/rgb-hex-converter": "^1.2.0",
     "@rollup/plugin-image": "^2.1.1",
@@ -53,6 +54,7 @@
     "bootstrap-icons": "^1.9.1",
     "cheerio": "^1.0.0-rc.10",
     "color-blend": "^4.0.0",
+    "color-picker-svelte": "^0.5.0",
     "electron-alert": "^0.1.11",
     "electron-prompt": "^1.6.0",
     "electron-reload": "^1.5.0",

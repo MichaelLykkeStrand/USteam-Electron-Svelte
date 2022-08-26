@@ -792,10 +792,10 @@ var app = (function () {
 
     	if (account == undefined) {
     		account = {};
-    		account.color = "#fa976e";
+    		account.color = "#ff5733";
     	}
 
-    	let defaultColor = "#482a58";
+    	let defaultColor = "#3c2363";
     	let username = "MyUser";
     	let password = "MyPassword";
     	let avatarImg = "https://avatars.cloudflare.steamstatic.com/36753f040208dc4a99a5d97f6fbee6a24f83a316_full.jpg";
@@ -813,7 +813,7 @@ var app = (function () {
     			r: rgbaArray[0],
     			g: rgbaArray[1],
     			b: rgbaArray[2],
-    			a: 0.5
+    			a: 0.7
     		};
 
     		console.log("original1:");
@@ -824,7 +824,7 @@ var app = (function () {
     			r: rgbaArray2[0],
     			g: rgbaArray2[1],
     			b: rgbaArray2[2],
-    			a: 0.5
+    			a: 0.4
     		};
 
     		console.log("original2:");

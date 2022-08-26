@@ -1,15 +1,16 @@
 <script>
   import { normal, hue, saturation, color, multiply } from "color-blend";
   import { convertRgbToHex, convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
+  import { Color, ColorInput } from 'color-picker-svelte'
   var rgb2hex = require('rgb2hex');
   
 
   export let account;
   if (account == undefined) {
     account = {};
-    account.color = "#fa976e";
+    account.color = "#ff5733";
   }
-  let defaultColor = "#482a58";
+  let defaultColor = "#3c2363";
   let username = "MyUser";
   let password = "MyPassword";
   let avatarImg =
@@ -24,11 +25,11 @@
 
   function getGradientColor(hex1, hex2) {
     let rgbaArray = convertHexToRgb(hex1);
-    let rgb = { r: rgbaArray[0], g: rgbaArray[1], b: rgbaArray[2], a: 0.5 };
+    let rgb = { r: rgbaArray[0], g: rgbaArray[1], b: rgbaArray[2], a: 0.7 };
     console.log("original1:");
     console.log(rgb);
     let rgbaArray2 = convertHexToRgb(hex2);
-    let rgb2 = { r: rgbaArray2[0], g: rgbaArray2[1], b: rgbaArray2[2], a: 0.5 };
+    let rgb2 = { r: rgbaArray2[0], g: rgbaArray2[1], b: rgbaArray2[2], a: 0.4 };
     console.log("original2:");
     console.log(rgb2);
     let colorResult = color(rgb, rgb2);
