@@ -1,15 +1,15 @@
 <script>
-  import { normal, hue, saturation, color, multiply } from "color-blend";
-  import { convertRgbToHex, convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
-  import { Color, ColorInput } from 'color-picker-svelte'
+  import { color } from "color-blend";
+  import { convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
+  import ChromaPicker from 'svelte-chroma-picker';
   var rgb2hex = require('rgb2hex');
   
 
   export let account;
   if (account == undefined) {
-    account = {};
-    account.color = "#ff5733";
+    account = {color: "#ff5733"};
   }
+  
   let defaultColor = "#3c2363";
   let username = "MyUser";
   let password = "MyPassword";
@@ -82,6 +82,7 @@
       <button type="button" class="btn btn-outline-secondary">
         <i class="bi bi-palette" />
       </button>
+      <ChromaPicker bind:value={account.color} />
       <button class="btn btn-success"
         >Sign in <i class="bi bi-box-arrow-in-right run" /></button
       >

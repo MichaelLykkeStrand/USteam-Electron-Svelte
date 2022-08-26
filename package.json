@@ -54,7 +54,6 @@
     "bootstrap-icons": "^1.9.1",
     "cheerio": "^1.0.0-rc.10",
     "color-blend": "^4.0.0",
-    "color-picker-svelte": "^0.5.0",
     "electron-alert": "^0.1.11",
     "electron-prompt": "^1.6.0",
     "electron-reload": "^1.5.0",
@@ -71,6 +70,7 @@
     "pureimage": "^0.2.7",
     "rgb2hex": "^0.2.5",
     "sirv-cli": "^0.4.4",
+    "svelte-chroma-picker": "^1.1.1",
     "uuid": "^8.3.2",
     "vdf": "^0.0.2"
   },
