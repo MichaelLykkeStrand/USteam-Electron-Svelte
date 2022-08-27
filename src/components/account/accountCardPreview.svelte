@@ -1,5 +1,5 @@
 <script>
-    import { color } from "color-blend";
+    import { color, hue } from "color-blend";
     import { convertHexToRgb } from "@mdhnpm/rgb-hex-converter";
     var rgb2hex = require("rgb2hex");
     export let account;
@@ -17,8 +17,8 @@
     updateColor();
 
     function updateColor() {
-        fill1 = getGradientColor(account.color, defaultColor);
-        fill2 = getGradientColor(defaultColor, fill1);
+        fill1 = "#FFFFFF"
+        fill2 = getGradientColor(account.color, defaultColor);
         fill3 = getGradientColor(defaultColor, fill2);
         fill4 = getGradientColor(defaultColor, fill3);
         fill5 = getGradientColor(defaultColor, fill4);
@@ -38,7 +38,7 @@
         };
         console.log("original2:");
         console.log(rgb2);
-        let colorResult = color(rgb, rgb2);
+        let colorResult = hue(rgb, rgb2);
         console.log("final:");
         console.log(colorResult);
         console.log(

@@ -483,7 +483,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (171:1) {#if ddActive}
+    // (146:1) {#if ddActive}
     function create_if_block(ctx) {
     	let div1;
     	let div0;
@@ -508,11 +508,11 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "values-dropdown-grid svelte-1drydlv");
-    			add_location(div0, file, 178, 3, 3703);
+    			add_location(div0, file, 153, 3, 3375);
     			attr_dev(div1, "class", "values-dropdown svelte-1drydlv");
     			add_render_callback(() => /*div1_elementresize_handler*/ ctx[19].call(div1));
     			toggle_class(div1, "top", /*top*/ ctx[3]);
-    			add_location(div1, file, 171, 2, 3549);
+    			add_location(div1, file, 146, 2, 3221);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -570,14 +570,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(171:1) {#if ddActive}",
+    		source: "(146:1) {#if ddActive}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (181:5) {#each val as innerValue, innerIndex}
+    // (156:5) {#each val as innerValue, innerIndex}
     function create_each_block_1(ctx) {
     	let button;
     	let button_id_value;
@@ -598,7 +598,7 @@ var app = (function () {
     			set_style(button, "background", /*innerValue*/ ctx[23]);
     			attr_dev(button, "class", "color-block svelte-1drydlv");
     			toggle_class(button, "active", /*innerValue*/ ctx[23] == /*value*/ ctx[0]);
-    			add_location(button, file, 181, 6, 3823);
+    			add_location(button, file, 156, 6, 3495);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -629,14 +629,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(181:5) {#each val as innerValue, innerIndex}",
+    		source: "(156:5) {#each val as innerValue, innerIndex}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:4) {#each values as val, index}
+    // (155:4) {#each values as val, index}
     function create_each_block(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*val*/ ctx[20];
@@ -697,7 +697,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(180:4) {#each values as val, index}",
+    		source: "(155:4) {#each values as val, index}",
     		ctx
     	});
 
@@ -731,21 +731,21 @@ var app = (function () {
     			if (if_block) if_block.c();
     			set_style(div0, "background", /*value*/ ctx[0]);
     			attr_dev(div0, "class", "color-block svelte-1drydlv");
-    			add_location(div0, file, 164, 4, 3371);
+    			add_location(div0, file, 139, 4, 3043);
     			attr_dev(div1, "class", "caret svelte-1drydlv");
     			set_style(div1, "margin-right", ".2rem");
     			toggle_class(div1, "top", /*top*/ ctx[3]);
-    			add_location(div1, file, 165, 4, 3433);
+    			add_location(div1, file, 140, 4, 3105);
     			set_style(div2, "display", "flex");
-    			add_location(div2, file, 163, 3, 3337);
+    			add_location(div2, file, 138, 3, 3009);
     			attr_dev(button, "class", "select-color svelte-1drydlv");
     			add_render_callback(() => /*button_elementresize_handler*/ ctx[15].call(button));
     			toggle_class(button, "fake-focus", /*ddActive*/ ctx[4]);
-    			add_location(button, file, 157, 2, 3187);
+    			add_location(button, file, 132, 2, 2859);
     			attr_dev(div3, "class", "color-picker-inner svelte-1drydlv");
-    			add_location(div3, file, 156, 1, 3151);
+    			add_location(div3, file, 131, 1, 2823);
     			attr_dev(div4, "class", "color-picker-holder svelte-1drydlv");
-    			add_location(div4, file, 155, 0, 3115);
+    			add_location(div4, file, 130, 0, 2787);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -822,9 +822,7 @@ var app = (function () {
     	// Our color set
     	let values = [
     		["#DAAFE9", "#C7DBF5", "#AAD5FB", "#ADE5DA", "#B0EDC3", "#FDF0A4", "#F8D6A2"],
-    		["#C47ADA", "#90BAEE", "#75BAFA", "#72D5BF", "#73DE8C", "#FBE66E", "#F5B969"],
-    		["#AE44B7", "#5E7ABC", "#5E7ABC", "#4DACA9", "#63B75A", "#EDBD4A", "#EC9740"],
-    		["#501B87", "#021B6B", "#0C2794", "#337277", "#2F6A52", "#AE802F", "#AD6127"]
+    		["#bf5656"]
     	];
 
     	// Keyboard shortcut
@@ -1026,7 +1024,7 @@ var app = (function () {
     	}
     }
 
-    function M(n,r,t){return Math.min(Math.max(n||0,r),t)}function m(n){return {r:M(n.r,0,255),g:M(n.g,0,255),b:M(n.b,0,255),a:M(n.a,0,1)}}function d(n){return {r:255*n.r,g:255*n.g,b:255*n.b,a:n.a}}function p(n){return {r:n.r/255,g:n.g/255,b:n.b/255,a:n.a}}function v(n,r){void 0===r&&(r=0);var t=Math.pow(10,r);return {r:Math.round(n.r*t)/t,g:Math.round(n.g*t)/t,b:Math.round(n.b*t)/t,a:n.a}}function x(n,r,t,u,i,o){return (1-r/t)*u+r/t*Math.round((1-n)*i+n*o)}function O(n,r,t,u,i){void 0===i&&(i={unitInput:!1,unitOutput:!1,roundOutput:!0}),i.unitInput&&(n=d(n),r=d(r)),n=m(n);var o=(r=m(r)).a+n.a-r.a*n.a,e=t(n,r,u),c=m({r:x(n.a,r.a,o,n.r,r.r,e.r),g:x(n.a,r.a,o,n.g,r.g,e.g),b:x(n.a,r.a,o,n.b,r.b,e.b),a:o});return c=i.unitOutput?p(c):i.roundOutput?v(c):function(n){return v(n,9)}(c),c}function s(n,r,t){return d(t(p(n),p(r)))}function I(n){return .3*n.r+.59*n.g+.11*n.b}function q(n,r){var t=r-I(n);return function(n){var r=I(n),t=n.r,u=n.g,i=n.b,o=Math.min(t,u,i),e=Math.max(t,u,i);function c(n){return r+(n-r)*r/(r-o)}function f(n){return r+(n-r)*(1-r)/(e-r)}return o<0&&(t=c(t),u=c(u),i=c(i)),e>1&&(t=f(t),u=f(u),i=f(i)),{r:t,g:u,b:i}}({r:n.r+t,g:n.g+t,b:n.b+t})}function y(n,r){return q(r,I(n))}function R(n,r){return O(n,r,s,y)}
+    function M(n,r,t){return Math.min(Math.max(n||0,r),t)}function m(n){return {r:M(n.r,0,255),g:M(n.g,0,255),b:M(n.b,0,255),a:M(n.a,0,1)}}function d(n){return {r:255*n.r,g:255*n.g,b:255*n.b,a:n.a}}function p(n){return {r:n.r/255,g:n.g/255,b:n.b/255,a:n.a}}function v(n,r){void 0===r&&(r=0);var t=Math.pow(10,r);return {r:Math.round(n.r*t)/t,g:Math.round(n.g*t)/t,b:Math.round(n.b*t)/t,a:n.a}}function x(n,r,t,u,i,o){return (1-r/t)*u+r/t*Math.round((1-n)*i+n*o)}function O(n,r,t,u,i){void 0===i&&(i={unitInput:!1,unitOutput:!1,roundOutput:!0}),i.unitInput&&(n=d(n),r=d(r)),n=m(n);var o=(r=m(r)).a+n.a-r.a*n.a,e=t(n,r,u),c=m({r:x(n.a,r.a,o,n.r,r.r,e.r),g:x(n.a,r.a,o,n.g,r.g,e.g),b:x(n.a,r.a,o,n.b,r.b,e.b),a:o});return c=i.unitOutput?p(c):i.roundOutput?v(c):function(n){return v(n,9)}(c),c}function s(n,r,t){return d(t(p(n),p(r)))}function I(n){return .3*n.r+.59*n.g+.11*n.b}function q(n,r){var t=r-I(n);return function(n){var r=I(n),t=n.r,u=n.g,i=n.b,o=Math.min(t,u,i),e=Math.max(t,u,i);function c(n){return r+(n-r)*r/(r-o)}function f(n){return r+(n-r)*(1-r)/(e-r)}return o<0&&(t=c(t),u=c(u),i=c(i)),e>1&&(t=f(t),u=f(u),i=f(i)),{r:t,g:u,b:i}}({r:n.r+t,g:n.g+t,b:n.b+t})}function w(n){return Math.max(n.r,n.g,n.b)-Math.min(n.r,n.g,n.b)}function j(n,r){var t=["r","g","b"].sort(function(r,t){return n[r]-n[t]}),u=t[0],i=t[1],o=t[2],e={r:n.r,g:n.g,b:n.b};return e[o]>e[u]?(e[i]=(e[i]-e[u])*r/(e[o]-e[u]),e[o]=r):e[i]=e[o]=0,e[u]=0,e}function k(n,r){return q(j(r,w(n)),I(n))}function y(n,r){return q(r,I(n))}function P(n,r){return O(n,r,s,k)}function R(n,r){return O(n,r,s,y)}
 
     function unwrapExports (x) {
     	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -1163,43 +1161,43 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*account*/ ctx[0].avatarImg)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "avatarImg");
     			attr_dev(img, "class", "center svelte-7z84c5");
-    			add_location(img, file$1, 69, 12, 1969);
-    			add_location(strong, file$1, 70, 12, 2045);
+    			add_location(img, file$1, 69, 12, 1943);
+    			add_location(strong, file$1, 70, 12, 2019);
     			attr_dev(div0, "class", "text-layer svelte-7z84c5");
-    			add_location(div0, file$1, 68, 8, 1931);
+    			add_location(div0, file$1, 68, 8, 1905);
     			attr_dev(rect, "id", "E1");
     			attr_dev(rect, "fill", /*fill1*/ ctx[1]);
     			attr_dev(rect, "width", "1600");
     			attr_dev(rect, "height", "800");
     			attr_dev(rect, "rx", "8");
-    			add_location(rect, file$1, 79, 16, 2340);
+    			add_location(rect, file$1, 79, 16, 2314);
     			attr_dev(path0, "id", "E2");
     			attr_dev(path0, "fill", /*fill2*/ ctx[2]);
     			attr_dev(path0, "d", "M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z");
-    			add_location(path0, file$1, 80, 16, 2420);
+    			add_location(path0, file$1, 80, 16, 2394);
     			attr_dev(path1, "id", "E3");
     			attr_dev(path1, "fill", /*fill3*/ ctx[3]);
     			attr_dev(path1, "d", "M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z");
-    			add_location(path1, file$1, 85, 16, 2731);
+    			add_location(path1, file$1, 85, 16, 2705);
     			attr_dev(path2, "id", "E4");
     			attr_dev(path2, "fill", /*fill4*/ ctx[4]);
     			attr_dev(path2, "d", "M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z");
-    			add_location(path2, file$1, 90, 16, 3038);
+    			add_location(path2, file$1, 90, 16, 3012);
     			attr_dev(path3, "id", "E5");
     			attr_dev(path3, "fill", /*fill5*/ ctx[5]);
     			attr_dev(path3, "d", "M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z");
-    			add_location(path3, file$1, 95, 16, 3343);
+    			add_location(path3, file$1, 95, 16, 3317);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "width", "100%");
     			attr_dev(svg, "height", "100%");
     			attr_dev(svg, "viewBox", "0 0 1000 727");
-    			add_location(svg, file$1, 73, 12, 2150);
+    			add_location(svg, file$1, 73, 12, 2124);
     			attr_dev(div1, "class", "background-layer svelte-7z84c5");
-    			add_location(div1, file$1, 72, 8, 2106);
+    			add_location(div1, file$1, 72, 8, 2080);
     			attr_dev(div2, "class", "wrap-layer svelte-7z84c5");
-    			add_location(div2, file$1, 67, 4, 1897);
+    			add_location(div2, file$1, 67, 4, 1871);
     			attr_dev(div3, "class", "grid-container account-preview-card svelte-7z84c5");
-    			add_location(div3, file$1, 66, 0, 1842);
+    			add_location(div3, file$1, 66, 0, 1816);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1278,8 +1276,8 @@ var app = (function () {
     	updateColor();
 
     	function updateColor() {
-    		$$invalidate(1, fill1 = getGradientColor(account.color, defaultColor));
-    		$$invalidate(2, fill2 = getGradientColor(defaultColor, fill1));
+    		$$invalidate(1, fill1 = "#FFFFFF");
+    		$$invalidate(2, fill2 = getGradientColor(account.color, defaultColor));
     		$$invalidate(3, fill3 = getGradientColor(defaultColor, fill2));
     		$$invalidate(4, fill4 = getGradientColor(defaultColor, fill3));
     		$$invalidate(5, fill5 = getGradientColor(defaultColor, fill4));
@@ -1308,7 +1306,7 @@ var app = (function () {
 
     		console.log("original2:");
     		console.log(rgb2);
-    		let colorResult = R(rgb, rgb2);
+    		let colorResult = P(rgb, rgb2);
     		console.log("final:");
     		console.log(colorResult);
     		console.log(rgb2hex("rgb(" + colorResult.r + "," + colorResult.g + "," + colorResult.b + ")").hex);
@@ -1327,6 +1325,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		color: R,
+    		hue: P,
     		convertHexToRgb: dist_2,
     		rgb2hex,
     		account,
